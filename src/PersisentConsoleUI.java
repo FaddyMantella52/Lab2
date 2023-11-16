@@ -69,6 +69,7 @@ public class PersisentConsoleUI {
                     System.out.println("Which slot to remove?");
                     slotController.printAllSlots();
                     int slotToRemove = scanner.nextInt();
+                    slotController.removeSlot(slotToRemove);
                     System.out.println("Slot Removed");
                     break;
                 case 3:
@@ -92,8 +93,8 @@ public class PersisentConsoleUI {
                     providerController.printAllAuthors();
                     break;
                 case 7:
-                    TestSlotProvider.test_slots();
-                    TestSlotProvider.test_providers();
+                    TestSlotMethods.test_slots();
+                    TestProviderMethods.test_providers();
                     System.out.println("All Tests Completed");
                 case 8:
                     System.out.println("Goodbye!");
