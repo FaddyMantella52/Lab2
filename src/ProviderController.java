@@ -7,7 +7,8 @@ public class ProviderController {
         this.providerRepository = providerRepository;
     }
     public void addProvider(Provider provider){
-         providerRepository.addProvider(provider);
+        providerRepository.addProvider(provider);
+        provider.addObserver(new ProviderUIObserver());
     }
     public Provider findProviderByName(String providerName){
         return providerRepository.findProviderByName(providerName);
