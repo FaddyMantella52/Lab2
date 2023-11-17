@@ -4,6 +4,7 @@ import java.util.Collection;
 
 public class Slot {
     private String title;
+    private List<SlotDecorator> decorators = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -49,6 +50,16 @@ public class Slot {
 
     public void removeProvider(Provider provider){
         providers.remove(provider);
+    }
+
+    public void addDecorator(SlotDecorator decorator) {
+        decorators.add(decorator);
+    }
+
+    public void decorate() {
+        for (SlotDecorator decorator : decorators) {
+            decorator.decorateSlot(this);
+        }
     }
 }
 
