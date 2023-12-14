@@ -45,5 +45,5 @@ public class GameTable {
         return "ID: " + gameTableID + ", Title: " + title + ", Type: " + type + ", Capacity: " + capacity;
     }
 
-    // Other methods and properties specific to GameTable can be added here
+
 }
