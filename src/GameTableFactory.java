@@ -6,3 +6,4 @@ public class GameTableFactory {
         return gameTable;
     }
 }
+//privat si numai met statice
