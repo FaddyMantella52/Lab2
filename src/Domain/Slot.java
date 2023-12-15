@@ -1,30 +1,42 @@
+package Domain;
+
+import Domain.Provider;
+import Patterns.SlotDecorator;
+
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collection;
 
 public class Slot {
     private String title;
+    private int providerId;
+    private int decoratorId;
+    private int slotId;
+    private List<Provider> providers = new ArrayList<>();
     private List<SlotDecorator> decorators = new ArrayList<>();
+
+    public Slot(int slotId,String title,int providerId,int decoratorId){
+        this.slotId = slotId;
+        this.title = title;
+        this.providerId = providerId;
+        this.decoratorId = decoratorId;
+    }
 
     @Override
     public String toString() {
         return "Slot{" +
                 "title='" + title + '\'' +
-                ", providers=" + providers +
-                ", SlotId=" + SlotId +
+                ", SlotId=" + slotId +
+                ",ProviderId=" + providerId +
+                ",DecoratorId=" + decoratorId +
                 '}';
     }
-
-    private List<Provider> providers = new ArrayList<>();
-
-    private int SlotId;
-
     public void setSlotId(int slotId) {
-        SlotId = slotId;
+        this.slotId = slotId;
     }
 
     public int getSlotId() {
-        return SlotId;
+        return slotId;
     }
 
     public void setTitle(String title) {
@@ -37,6 +49,14 @@ public class Slot {
 
     public void addProvider(Provider provider){
         providers.add(provider);
+    }
+
+    public int getProviderId(){
+        return providerId;
+    }
+
+    public void setProviderID(int providerId){
+        this.providerId = providerId;
     }
     public List<Provider> getProviders(){
         return providers;
@@ -54,6 +74,14 @@ public class Slot {
 
     public void addDecorator(SlotDecorator decorator) {
         decorators.add(decorator);
+    }
+
+    public int getDecoratorId(){
+        return decoratorId;
+    }
+
+    public void setDecoratorId(int decoratorId){
+        this.decoratorId = decoratorId;
     }
 
     public void decorate() {

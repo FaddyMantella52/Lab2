@@ -1,4 +1,10 @@
+package Controller;
+
+import Domain.GameTable;
+import Repo.GameTableRepository;
+
 import java.util.List;
+
 public class GameTableController {
     private GameTableRepository gameTableRepository;
 
@@ -19,13 +25,13 @@ public class GameTableController {
     }
 
     public void printAllGameTables() {
-        List<GameTable> gameTables = gameTableRepository.getAllGameTables();
-        for (GameTable gameTable : gameTables) {
-            System.out.println(gameTable.toString()); // Update to use the standard toString method
-        }
+        gameTableRepository.printAllGameTables();
     }
 
     public void removeGameTable(int gameTableID) {
         gameTableRepository.removeGameTable(gameTableID);
+    }
+
+    public void closeConnection() {
     }
 }

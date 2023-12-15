@@ -1,11 +1,29 @@
+package Domain;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class GameTable {
     private int gameTableID;
     private String title;
     private String type;
     private int capacity;
 
+    public GameTable() {
+        // Default constructor
+    }
+
     public GameTable(String title) {
         this.title = title;
+    }
+
+    // Constructor with parameters
+    public GameTable(int gameTableID, String title, String type, int capacity) {
+        this.gameTableID = gameTableID;
+        this.title = title;
+        this.type = type;
+        this.capacity = capacity;
     }
 
     // Getters and setters for type, capacity, and gameTableID
@@ -41,9 +59,8 @@ public class GameTable {
     public void setGameTableID(int gameTableID) {
         this.gameTableID = gameTableID;
     }
+
     public String toString() {
         return "ID: " + gameTableID + ", Title: " + title + ", Type: " + type + ", Capacity: " + capacity;
     }
-
-    // Other methods and properties specific to GameTable can be added here
 }

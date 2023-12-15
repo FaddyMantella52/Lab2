@@ -1,3 +1,5 @@
+package Domain;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,15 +9,8 @@ interface ProviderObservable {
     void notifyObservers(String message);
 }
 
-interface ProviderObserver {
-    void update(String message);
-}
-
 
 public class Provider implements ProviderObservable{
-    public void setName(String name) {
-        this.name = name;
-    }
     private String name;
     private int ProviderID;
     private List<Slot> slots = new ArrayList<>();
@@ -37,8 +32,9 @@ public class Provider implements ProviderObservable{
         return ProviderID;
     }
 
-    public Provider(String name){
+    public Provider(String name, int providerID){
         this.name = name;
+        this.ProviderID = providerID;
     }
 
     public void setProviderID(int providerIDCounter) {

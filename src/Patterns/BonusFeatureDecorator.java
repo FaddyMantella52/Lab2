@@ -1,3 +1,7 @@
+package Patterns;
+
+import Domain.Slot;
+
 public class BonusFeatureDecorator implements SlotDecorator {
     @Override
     public void decorateSlot(Slot slot) {

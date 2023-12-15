@@ -1,3 +1,7 @@
+package Domain;
+
+import Domain.Slot;
+
 import java.util.ArrayList;
 import java.util.List;
 

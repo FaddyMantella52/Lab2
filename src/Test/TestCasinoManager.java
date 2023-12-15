@@ -1,9 +1,16 @@
-import static org.junit.Assert.*;
+package Test;
+
+import static org.junit.Assert.assertEquals;
+
+import Domain.CasinoManager;
+import org.junit.Test;
 
 public class TestCasinoManager {
-    static void test_casinoManager(){
+
+    @Test
+    public void testCasinoManager() {
         // Test Casino Manager
         CasinoManager casinoManager = CasinoManager.getInstance("John Doe");
         assertEquals("John Doe", casinoManager.getName());
-        System.out.println("Casino Manager Test Completed");}
+    }
 }

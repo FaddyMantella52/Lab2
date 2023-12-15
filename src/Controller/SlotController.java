@@ -1,4 +1,10 @@
+package Controller;
+
+import Domain.Slot;
+import Repo.SlotRepository;
+
 import java.util.List;
+import java.sql.SQLException;
 
 public class SlotController {
     private SlotRepository slotRepository;
@@ -7,14 +13,12 @@ public class SlotController {
         this.slotRepository = slotRepository;
     }
 
-    public void addSlot(Slot slot){
-        slot.setSlotId(slotRepository.slotIdCounter);
-        slotRepository.slots.add(slot);
-        slotRepository.slotIdCounter++;
+    public void addSlot(Slot slot) throws SQLException {
+        slotRepository.addSlot(slot);
     }
 
-    public void printAllSlots(){
-        slotRepository.printAllSlots();
+    public void printAllSlots() throws SQLException {
+        slotRepository.viewSlot();
     }
 
     public Slot findSlotByTitle(String title){
@@ -25,7 +29,7 @@ public class SlotController {
         return slotRepository.getAllSlots();
     }
 
-    public void removeSlot(int slotID){
+    public void removeSlot(int slotID) throws SQLException{
         slotRepository.removeSlot(slotID);
     }
 }
