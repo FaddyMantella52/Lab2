@@ -77,6 +77,8 @@ public class SlotRepository {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)){
 
+            preparedStatement.setInt(1,slotId);
+
             try (ResultSet resultSet = preparedStatement.executeQuery()){
                 if(resultSet.next()){
                     int SlotId = resultSet.getInt("SlotId");
